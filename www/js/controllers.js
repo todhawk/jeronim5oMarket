@@ -50,9 +50,11 @@ function ($scope, $stateParams, $state, login) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $state, login) {
     $scope.signup = function(name,email,password){
+        console.log(name + " - " + email + " - " + password);
         login.addUser(name,email,password);
         $state.go("menu.home");
-    }
+    };
+    
 
 }])
    

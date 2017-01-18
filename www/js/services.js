@@ -8,7 +8,7 @@ angular.module('app.services', [])
 }])
 
 
-.service('login', [function(){
+.service('login', [function($scope, $stateParams){
     
     var loginData = [];
     
@@ -20,14 +20,13 @@ angular.module('app.services', [])
             
         },
         
-        addUser:function(user,email,password){
-            loginData.push(
-                {
-                    user:user,
-                    email:email,
-                    password:password
-                }
-            );
+       addUser:function(usuario,mail,senha){
+            loginData.push({
+                user:usuario,
+                email:mail,
+                password:senha
+            });
         }
     };
+    
 }]);
