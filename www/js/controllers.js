@@ -6,6 +6,7 @@ angular.module('app.controllers', [])
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, productService, $state) {
     $scope.products = productService.getProduct();
+    
     $scope.descricao = function (item) {
         console.log('entrou');
         productService.selectProduct(item);
