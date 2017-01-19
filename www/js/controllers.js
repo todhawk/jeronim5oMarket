@@ -1,13 +1,14 @@
 angular.module('app.controllers', [])
 
+
 .controller('homeCtrl', ['$scope', '$stateParams', 'productService', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, productService, $state) {
-
     $scope.products = productService.getProduct();
-    $scope.irParaDescricao = function (i) {
-        productService.selectProduct(i);
+    $scope.descricao = function (item) {
+        console.log('entrou');
+        productService.selectProduct(item);
         $state.go('menu.item');
     }
 
@@ -62,6 +63,11 @@ function ($scope, $stateParams, $state, userInfo) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $state) {
+
+  $scope.vaiPraHome = function() {
+    $state.go("menu.home");
+  }
+
 
 
 }])
