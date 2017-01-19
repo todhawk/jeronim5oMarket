@@ -63,10 +63,8 @@ angular.module('app.services', [])
         }
         ];
 
-        var productsFuncs = {
+        var productsFuncs = {//
             getProduct:function(){
-                console.log("Get Product");
-                console.log(allProducts);
                 return allProducts;
             }
         }
@@ -74,26 +72,25 @@ angular.module('app.services', [])
 }])
 
 
-.service('signUp', [function(){
-  var allDataSignUp = [];
-  var signUpFuncs = {
+.service('userInfo', [function(){
+  var allUserInfo = {};
 
-      getPerson:function(){
-          // console.log("Get Product");
-          // console.log(allDataSignUp);
-          return allDataSignUp;
+  var info = {
+
+      getUser:function(){ //devolve os objetos contidos em allUserInfo no escopo das respectivas paginas
+          return allUserInfo;
       },
 
-      addPerson:function(name,email,password){
-          allDataSignUp.push({
-              nameClint:name,
-              emailClient:email,
-              passwordClient:password
-          });
-          alert("Cadastro realizado com sucesso!");
-          console.log(allDataSignUp);
+      addUser:function(nome,email,senha,cpf,tel,endereco,cep){//valida os parametros passados e armazena no objeto allUserInfo
+          if(nome != undefined ){ allUserInfo.userNome = nome;}
+          if(email != undefined ){ allUserInfo.userEmail = email;}
+          if(senha != undefined ){ allUserInfo.userSenha = senha;}
+          if(cpf != undefined ){ allUserInfo.userCpf = cpf;}
+          if(tel != undefined ){ allUserInfo.userTel = tel;}
+          if(endereco != undefined ){ allUserInfo.userEndereco = endereco;}
+          if(cep != undefined ){ allUserInfo.userCep = cep;}
+          console.log(allUserInfo);
       }
-
   }
-  return signUpFuncs;
+  return info;
 }]);
