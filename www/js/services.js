@@ -7,23 +7,8 @@ angular.module('app.services', [])
 
 }])
 
-.service('selectProdAndCart', [function(){
-  var cart = [];
-  var selectedProduct = {};
-  var spcFunc = {
-    storeProductInCart:function(x) {
-      cart.push({x});
-      console.log(cart);
-    },
-    selected:function() {
-
-    }
-  }
-  return spcFunc;
-}])
-
-.service('productStore', [function(){
-
+.service('productService', [function(){
+    var selectedProduct = {};
     var allProducts = [
         {
             productId:0,
@@ -63,12 +48,24 @@ angular.module('app.services', [])
         }
         ];
 
-        var productsFuncs = {//
-            getProduct:function(){
-                return allProducts;
-            }
+    var svc = {
+        getProduct:function(){
+            return allProducts;
+
+        },
+
+        selectProduct:function(p){
+            selectedProduct = p;
+        },
+
+        getSelectedProduct:function(){
+            return selectedProduct;
         }
-        return productsFuncs;
+
+    }
+
+
+        return svc;
 }])
 
 
