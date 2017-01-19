@@ -1,14 +1,67 @@
-<ion-view title="Form" id="page10">
+<ion-view title="Dados Cadastrais" id="page10">
   <ion-content padding="true" style="background: url(img/123201556.jpg) no-repeat center;background-size:cover;" class="has-header">
     <div>
       <img src="img/mm1GDiABQ36pgpKhsRNG_jeronimo.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
     </div>
-    <div class="spacer" style="width: 300px; height: 22px;"></div>
+
+    <div>
+      <form class="list">
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">nome</span>
+          <input type="text" placeholder="" ng-model="nome">
+        </label>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">email</span>
+          <input type="email" placeholder="" ng-model="email">
+        </label>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">senha</span>
+          <input type="password" placeholder="para alterar a senha" ng-model="senha">
+        </label>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">cpf</span>
+          <input type="text" placeholder="123.456.789-00" ng-model="cpf">
+        </label>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">telefone</span>
+          <input type="text" placeholder="00 9999-9999" ng-model="tel">
+        </label>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">endereço</span>
+          <input type="text" placeholder="rua dos bobos, 0, compl." ng-model="endereco">
+        </label>
+        <div class="spacer" style="width: 300px; height: 10px;"></div>
+        <label class="item item-input search" style="border-radius: 20px 20px 20px 20px!important;">
+          <span class="input-label">cep</span>
+          <input type="text" placeholder="12.345-678" ng-model="cep">
+        </label>
+        <div class="spacer" style="width: 300px; height: 17px;"></div>
+      </form>
+    </div>
+    <div class="button-bar">
+      <button ng-click="enviarDados(nome,email,senha,cpf,tel,endereco,cep)" style="border-radius:25px 25px 25px 25px;" class="button button-positive  button-block">Salvar</button>
+      <button style="border-radius:25px 25px 25px 25px;" class="button button-positive  button-block">Cancelar</button>
+    </div>
+    <!-- <div class="spacer" style="width: 300px; height: 22px;"></div>
     <h3 id="form-heading6" style="color:#030303;font-style:italic;text-align:center;">Complete seu cadastro para começar a comprar!</h3>
     <div class="spacer" style="width: 300px; height: 35px;"></div>
     <form id="form-form8" class="list">
       <label class="item item-input" id="form-input11">
         <span class="input-label">Telefone:</span>
+        <input type="text" placeholder="">
+      </label>
+      <label class="item item-input" id="form-input12">
+        <span class="input-label">Endereço:</span>
+        <input type="text" placeholder="">
+      </label>
+      <label class="item item-input" id="form-input12">
+        <span class="input-label">Endereço:</span>
         <input type="text" placeholder="">
       </label>
       <label class="item item-input" id="form-input12">
@@ -25,6 +78,6 @@
       <div class="spacer" style="width: 300px; height: 28px;"></div>
       <button id="form-button5" class="button button-balanced  button-block">Salvar</button>
       <div class="spacer" style="width: 300px; height: 42px;"></div>
-    </form>
+    </form> -->
   </ion-content>
 </ion-view>
