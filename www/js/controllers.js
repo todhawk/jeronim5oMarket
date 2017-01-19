@@ -3,13 +3,13 @@ angular.module('app.controllers', [])
 .controller('homeCtrl', ['$scope', '$stateParams', 'productService', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, productService) {
-$scope.products = productService.getProduct();
-$scope.irParaDescricao = function (i) {
-    productService.selectProduct(i);
-    $state.go('menu.item');
-}
+function ($scope, $stateParams, productService, $state) {
 
+    $scope.products = productService.getProduct();
+    $scope.irParaDescricao = function (i) {
+        productService.selectProduct(i);
+        $state.go('menu.item');
+    }
 
 }])
 
@@ -58,17 +58,11 @@ function ($scope, $stateParams, $state, userInfo) {
 
 }])
 
-.controller('itemCtrl', ['$scope', '$stateParams', '$state', 'selectProdAndCart',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('itemCtrl', ['$scope', '$stateParams', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, $state, selectProdAndCart) {
-  $scope.vaiPraHome = function() {
-    $state.go("menu.home");
-  }
-  $scope.addCart = function(x) {
-    selectProdAndCart.storeProductInCart(x);
-    console.log(x);
-  }
+function ($scope, $stateParams, $state) {
+
 
 }])
 
