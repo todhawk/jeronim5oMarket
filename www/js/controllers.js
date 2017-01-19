@@ -7,11 +7,15 @@ angular.module('app.controllers', [])
 function ($scope, $stateParams, productService, $state) {
     $scope.products = productService.getProduct();
 
+    $scope.addCart = function(item){
+        productService.carregaCarrinho(item);
+    }
+
     $scope.descricao = function (item) {
-        console.log('entrou');
         productService.selectProduct(item);
         $state.go('menu.item');
     }
+
 
 }])
 
@@ -65,6 +69,10 @@ function ($scope, $stateParams, $state, userInfo) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, $state, productService) {
   $scope.product = productService.getSelectedProduct();
+
+  $scope.addCart = function(item){
+      productService.carregaCarrinho(item);
+  }
 
   $scope.vaiPraHome = function() {
     $state.go("menu.home");
