@@ -58,11 +58,16 @@ function ($scope, $stateParams, $state, signUp) {
 
 }])
 
-.controller('itemCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('itemCtrl', ['$scope', '$stateParams', '$state', 'selectProdAndCart',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
+function ($scope, $stateParams, $state, selectProdAndCart) {
+  $scope.vaiPraHome = function() {
+    $state.go("menu.home");
+  }
+  $scope.addCart = function(x) {
+    selectProdAndCart.storeProductInCart(x);
+  }
 
 }])
 
