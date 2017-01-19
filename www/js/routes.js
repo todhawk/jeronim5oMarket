@@ -42,10 +42,14 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('item', {
+  .state('menu.item', {
     url: '/page6',
-    templateUrl: 'templates/item.html',
-    controller: 'itemCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/item.html',
+        controller: 'itemCtrl'
+      }
+    }
   })
 
   .state('menu.carrinho', {
@@ -68,16 +72,24 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('profile', {
+  .state('menu.profile', {
     url: '/page9',
-    templateUrl: 'templates/profile.html',
-    controller: 'profileCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/profile.html',
+        controller: 'profileCtrl'
+      }
+    }
   })
 
-  .state('form', {
+  .state('menu.form', {
     url: '/page10',
-    templateUrl: 'templates/form.html',
-    controller: 'formCtrl'
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/form.html',
+        controller: 'formCtrl'
+      }
+    }
   })
 
 $urlRouterProvider.otherwise('/login')

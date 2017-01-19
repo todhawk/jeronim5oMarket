@@ -10,14 +10,20 @@
   </ion-side-menu-content>
   <ion-side-menu side="left" id="side-menu21">
     <ion-header-bar class="bar-stable">
-      <div class="title">Menu</div>
+      <div class="title">
+        Menu
+      </div>
     </ion-header-bar>
     <ion-content padding="false" class="side-menu-left has-header ">
       <ion-list id="menu-list1">
         <ion-item id="menu-list-item1" ui-sref="menu.home" menu-close="">Home</ion-item>
         <ion-item id="menu-list-item2" ui-sref="menu.carrinho" menu-close="">Carrinho</ion-item>
-        <ion-item id="menu-list-item46" ui-sref="menu.contato" menu-close="">Contato</ion-item>
-        <ion-item id="menu-list-item47" ui-sref="login" menu-close="">Login</ion-item>
+        <ion-item id="menu-list-item59" ui-sref="menu.profile" menu-close="">Minha conta</ion-item>
+        <ion-item id="menu-list-item47" ui-sref="login" menu-close="">Logout</ion-item>
+        <ion-item id="menu-list-item48" ui-sref="menu.signup" menu-close="">Sign up</ion-item> <!-- sai do menu e só aparece como botão do login -->
+        <ion-item id="menu-list-item58" ui-sref="menu.form" menu-close="">Form</ion-item> <!-- Sai do menu e se torna um botão do profile -->
+        <ion-item id="menu-list-item60" ui-sref="menu.item" menu-close="">Item</ion-item> <!-- não precisa estar no menu, ela vai ser uma segunda página para cada produto -->
+        <ion-item id="menu-list-item46" ui-sref="menu.contato" menu-close="">Contato</ion-item> <!-- Vai sair e virar conteúdo do menu -->
       </ion-list>
     </ion-content>
   </ion-side-menu>
