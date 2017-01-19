@@ -8,23 +8,26 @@ angular.module('app.services', [])
 }])
 
 
-.service('login', [function($scope, $stateParams){
+.service('signUp', [function(){
+  var allDataSignUp = [];
+  var signUpFuncs = {
 
-    var loginData = [];
+      getPerson:function(){
+          console.log("Get Product");
+          console.log(allDataSignUp);
+          return allDataSignUp;
+      },
 
-    var log = {
+      addPerson:function(name,email,password){
+          allDataSignUp.push({
+              nameClint:name,
+              emailClient:email,
+              passwordClient:password
+          });
+          alert("Cadastro realizado com sucesso!");
+          console.log(allDataSignUp);
+      }
 
-        getUser:function(){
-            return loginData;
-        },
-
-       addUser:function(usuario,mail,senha){
-            loginData.push({
-                user:usuario,
-                email:mail,
-                password:senha
-            });
-        }
-    };
-
+  }
+  return signUpFuncs;
 }]);
