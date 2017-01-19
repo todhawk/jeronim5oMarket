@@ -10,11 +10,12 @@
       </label>
     </form>
     <div class="spacer" style="width: 300px; height: 11px;"></div>
-    <ion-list id="home-list5">
+
+    <ion-list id="home-list5" ng-repeat="i in products">
       <ion-item class="item-thumbnail-left item-icon-right positive" id="home-list-item11">
-        <img src="img/limpador_veja_multiuso_2.jpg">
-        <h2positive>Veja Multiuso - 400ml
-          <p>R$6.90</p>
+        <img src={{i.productImage}}>
+        <h2positive>{{i.productName}}<span style="color:gray;font-style: italic;font-size: 13px;">{{" - id " + i.productId}}</span>
+          <p>{{"R$ " + i.productPrice + 0.00}}</p>
           <i class="icon ion-chevron-left icon-accessory"></i>
           <ion-option-button class="button-dark">
             <center>
@@ -27,5 +28,6 @@
         </h2positive>
       </ion-item>
     </ion-list>
+
   </ion-content>
 </ion-view>
