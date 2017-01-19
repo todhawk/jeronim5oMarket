@@ -3,23 +3,27 @@
     <div>
       <img src="img/Y88L1lCjSeO7PcSWgpFR_jeronimo.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
     </div>
-    <div class="list card" id="item-card21">
+
+    <div class="list card">
+      <h5 style="color:#000000;">Descrição</h5>
       <div class=" item item-image">
-        <img src="img/00003.jpg" style="display: block; width: 80%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{user.productImage}}" style="display: block; width: 65%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
-      <div id="item-markdown10" style="text-align:center;" class="show-list-numbers-and-dots">
-        <p style="color:#000000;">Omo em pó 4kg</p>
+      <h4 style="color:#000000;">{{user.productName + " - id" + xidx}}</h4>
+      <input ng-model="x" type="text" name="" value="" placeholder="teste">
+      <span>{{user.comment}}</span>
+      <div class="spacer" style="width: 300px; height: 23px;"></div>
+      <div>
+        <p class="oldPrice">de: R$ 10,00</p>
+        <p class="newPrice">por: R$8,90</p>
+      </div>
+      <div class="button-bar">
+        <button ng-click="vaiPraHome()" style="font-size:10px;" class="button button-positive  button-block">Continuar Comprando</button>
+        <button ng-click="addCart(x)" class="button button-balanced  button-block">Add Carrinho</button>
       </div>
     </div>
-    <div id="item-markdown9" style="text-align:center;" class="show-list-numbers-and-dots"></div>
-    <form id="item-form3" class="list">
-      <label class="item item-input" id="item-textarea4">
-        <span class="input-label">R$39,90</span><textarea placeholder=""></textarea></label>
-      <label class="item item-input" id="item-input9">
-        <span class="input-label">Qtd</span>
-        <input type="text" placeholder="">
-      </label>
-    </form>
-    <button id="item-button4" style="border-radius:20px 20px 20px 20px;" class="button button-balanced  button-block">Adicionar no carrinho</button>
+
+
+
   </ion-content>
 </ion-view>
