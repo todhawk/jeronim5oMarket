@@ -5,17 +5,15 @@
     </div>
 
     <div class="list card">
-      <h5 style="color:#000000;">Descrição</h5>
       <div class=" item item-image">
-        <img src="{{user.productImage}}" style="display: block; width: 65%; height: auto; margin-left: auto; margin-right: auto;">
+        <img src="{{product.productImage}}" style="display: block; width: 65%; height: auto; margin-left: auto; margin-right: auto;">
       </div>
-      <h4 style="color:#000000;">{{user.productName + " - id" + xidx}}</h4>
-      <input ng-model="x" type="text" name="" value="" placeholder="teste">
-      <span>{{user.comment}}</span>
+      <h4 style="color:#000000;">{{product.productName}}</h4>
+      <span>{{product.productDescription}}</span>
       <div class="spacer" style="width: 300px; height: 23px;"></div>
       <div>
-        <p class="oldPrice">de: R$ 10,00</p>
-        <p class="newPrice">por: R$8,90</p>
+        <p class="oldPrice">{{product.productPrice}}</p>
+        <p class="newPrice">{{product.productOldPrice}}</p>
       </div>
       <div class="button-bar">
         <button ng-click="vaiPraHome()" style="font-size:10px;" class="button button-positive  button-block">Continuar Comprando</button>

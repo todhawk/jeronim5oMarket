@@ -6,7 +6,7 @@ angular.module('app.controllers', [])
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams, productService, $state) {
     $scope.products = productService.getProduct();
-    
+
     $scope.descricao = function (item) {
         console.log('entrou');
         productService.selectProduct(item);
@@ -60,16 +60,15 @@ function ($scope, $stateParams, $state, userInfo) {
 
 }])
 
-.controller('itemCtrl', ['$scope', '$stateParams', '$state',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('itemCtrl', ['$scope', '$stateParams', '$state', 'productService',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, $state) {
+function ($scope, $stateParams, $state, productService) {
+  $scope.product = productService.getSelectedProduct();
 
   $scope.vaiPraHome = function() {
     $state.go("menu.home");
   }
-
-
 
 }])
 
