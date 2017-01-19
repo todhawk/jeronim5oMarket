@@ -67,6 +67,7 @@ function ($scope, $stateParams, $state, selectProdAndCart) {
   }
   $scope.addCart = function(x) {
     selectProdAndCart.storeProductInCart(x);
+    console.log(x);
   }
 
 }])

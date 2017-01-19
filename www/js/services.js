@@ -8,11 +8,11 @@ angular.module('app.services', [])
 }])
 
 .service('selectProdAndCart', [function(){
-  var cart = [{}];
+  var cart = [];
   var selectedProduct = {};
   var spcFunc = {
     storeProductInCart:function(x) {
-      cart.push(x);
+      cart.push({x});
       console.log(cart);
     },
     selected:function() {
