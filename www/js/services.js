@@ -9,6 +9,7 @@ angular.module('app.services', [])
 
 .service('productService', [function(){
     var selectedProduct = {};
+    var cart = [];
     var allProducts = [
         {
             productId:0,
@@ -51,7 +52,6 @@ angular.module('app.services', [])
     var svc = {
         getProduct:function(){
             return allProducts;
-
         },
 
         selectProduct:function(p){
@@ -60,6 +60,15 @@ angular.module('app.services', [])
 
         getSelectedProduct:function(){
             return selectedProduct;
+        },
+
+        carregaCarrinho:function(p) {
+            cart.push(p);
+            console.log(cart);
+        },
+
+        getCarrinho:function() {
+            return cart;
         }
 
     }
