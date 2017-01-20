@@ -36,7 +36,7 @@ function ($scope, $stateParams, $state, userInfo) {
     $scope.login = function(user,password){
         //console.log("User: " + user + " Senha: " + password);
         // if(user == userInfo.infoSignUp.userName && password == userInfo.infoSignUp.userMail){
-        if (user == 'jeronimo'&& password == 'lindao') {
+        if ((user == 'jeronimo'&& password == 'lindao') || (user == 'admin'&& password == 'admin')) {
             //Redirecionar para a pagina Home
             //console.log("Login realizado com sucesso!!!");
             $scope.error = false;
