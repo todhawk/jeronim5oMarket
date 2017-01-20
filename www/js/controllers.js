@@ -4,8 +4,7 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
-
+  $scope.products = productStore.getProduct();
 
 }])
 
@@ -17,36 +16,20 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('loginCtrl', ['$scope', '$stateParams', '$state', 'login', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('loginCtrl', ['$scope', '$stateParams', '$state', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, $state, login) {
+function ($scope, $stateParams, $state) {
     $scope.login = function(user,password){
-        //console.log("User: " + user + " Senha: " + password);
-
-
-        // if(user == userInfo.infoSignUp.userName && password == userInfo.infoSignUp.userMail){
-        if (user == 'admin'&& password == 'admin') {
-
-            //Redirecionar para a pagina Home
-            //console.log("Login realizado com sucesso!!!");
-            $scope.error = false;
-            $state.go("menu.home");
+        if (user == "admin" && password == "admin") {
+          $scope.error = false;
+          $state.go("menu.home");
         }else{
-            $scope.error = true;
-            //exibir mensagem de erro
-            console.log("Username e/ou Password incorretos");
+          $scope.error = true;
+          //exibir mensagem de erro
+          console.log("Username e/ou Password incorretos");
         }
-
-
     }
-
-
-
-
-
-
-
 }])
 
 .controller('signupCtrl', ['$scope', '$stateParams', '$state', 'login', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
